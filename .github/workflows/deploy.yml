@@ -16,15 +16,15 @@ jobs:
       - uses: actions/checkout@v4
 
     #   # Se for Node (Phaser, vite, etc.):
-    #   - uses: actions/setup-node@v4
-    #     with:
-    #       node-version: "20"
-    #       cache: "npm"
-    #   - run: |
-    #       if [ -f package.json ]; then
-    #         npm ci
-    #         npm run build
-    #       fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: |
+          if [ -f package.json ]; then
+            npm ci
+            npm run build
+          fi
 
       # Se for Godot Web (exemplo simples com headless):
       # - name: Build Godot Web
