@@ -1,0 +1,13 @@
+{
+  "name": "ods-game-template",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "validate:game": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1"
+  }
+}

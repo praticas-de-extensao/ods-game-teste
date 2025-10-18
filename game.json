@@ -1,0 +1,20 @@
+{
+  "name": "Seu Jogo ODS",
+  "team": "Sua Equipe",
+  "year": 2025,
+  "sdgs": [
+    1
+  ],
+  "engine": "Godot 4 Web",
+  "tech": [
+    "Godot",
+    "GDScript"
+  ],
+  "repo": "https://github.com/seu-org/seu-repo",
+  "play_url": "https://seu-org.github.io/seu-repo/",
+  "thumbnail": "https://seu-org.github.io/seu-repo/thumb.png",
+  "description": "Breve descrição do jogo.",
+  "accessibility": [
+    "keyboard"
+  ]
+}
