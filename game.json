@@ -10,9 +10,9 @@
     "Godot",
     "GDScript"
   ],
-  "repo": "https://github.com/seu-org/seu-repo",
-  "play_url": "https://seu-org.github.io/seu-repo/",
-  "thumbnail": "https://seu-org.github.io/seu-repo/thumb.png",
+  "repo": "https://github.com/praticas-de-extensao/ods-game-teste",
+  "play_url": "https://praticas-de-extensao.github.io/ods-game-teste/",
+  "thumbnail": "https://praticas-de-extensao.github.io/ods-game-teste/thumb.png",
   "description": "Breve descrição do jogo.",
   "accessibility": [
     "keyboard"
