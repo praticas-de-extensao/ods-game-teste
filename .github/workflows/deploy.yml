@@ -1,0 +1,54 @@
+name: Build & Deploy (Pages)
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Se for Node (Phaser, vite, etc.):
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: |
+          if [ -f package.json ]; then
+            npm ci
+            npm run build
+          fi
+
+      # Se for Godot Web (exemplo simples com headless):
+      # - name: Build Godot Web
+      #   run: |
+      #     wget -q https://downloads.tuxfamily.org/godotengine/4.2.2/....
+      #     chmod +x godot
+      #     ./godot --headless --export-release "Web" dist/index.html
+      # Ajuste comando/versão/export template conforme seu setup.
+
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p out
+          # copie saída de build para ./out
+          if [ -d dist ]; then cp -r dist/* out/; fi
+          if [ -f game.json ]; then cp game.json out/; fi
+          # thumbnail opcional
+          if [ -f thumb.png ]; then cp thumb.png out/; fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v4
